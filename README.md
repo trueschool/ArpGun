@@ -4,6 +4,10 @@
 
 ---
 
+![arpgun screenshot](arpgun-gui.png)
+
+---
+
 ## Background
 
 ArpGun is an evolution of **ChordGun**, originally developed by pandabot. While ChordGun focused on rapid chord entry on a single line, ArpGun extends this functionality to support rhythmic "spacing" and melodic movement, making it a complete tool for both harmony and rhythm.
