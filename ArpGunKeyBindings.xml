@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<KeyboardBindings doc_version="4">
+  <Categories>
+    <Category>
+      <Identifier>Global</Identifier>
+      <KeyBindings>
+        <KeyBinding>
+          <Topic>ArpGun</Topic>
+          <Binding>∿ toggle arp mode</Binding>
+        </KeyBinding>
+        <KeyBinding>
+          <Topic>ArpGun</Topic>
+          <Binding>∿ increment arp pattern</Binding>
+          <Key>Shift + Option + Period</Key>
+        </KeyBinding>
+        <KeyBinding>
+          <Topic>ArpGun</Topic>
+          <Binding>∿ decrement arp pattern</Binding>
+          <Key>Shift + Option + Comma</Key>
+        </KeyBinding>
+        <KeyBinding>
+          <Topic>ArpGun</Topic>
+          <Binding>∿ increment arp step</Binding>
+          <Key>Shift + Option + Apostrophe</Key>
+        </KeyBinding>
+        <KeyBinding>
+          <Topic>ArpGun</Topic>
+          <Binding>∿ decrement arp step</Binding>
+          <Key>Shift + Option + Semicolon</Key>
+        </KeyBinding>
+        <KeyBinding>
+          <Topic>ArpGun</Topic>
+          <Binding>∿ increment scale tonic note</Binding>
+          <Key>Shift + Option + 0</Key>
+        </KeyBinding>
+        <KeyBinding>
+          <Topic>ArpGun</Topic>
+          <Binding>∿ decrement scale tonic note</Binding>
+          <Key>Shift + Option + 9</Key>
+        </KeyBinding>
+        <KeyBinding>
+          <Topic>ArpGun</Topic>
+          <Binding>∿ increment scale type</Binding>
+        </KeyBinding>
+        <KeyBinding>
+          <Topic>ArpGun</Topic>
+          <Binding>∿ decrement scale type</Binding>
+        </KeyBinding>
+        <KeyBinding>
+          <Topic>ArpGun</Topic>
+          <Binding>∿ increment chord type</Binding>
+          <Key>Shift + Option + Equals</Key>
+        </KeyBinding>
+        <KeyBinding>
+          <Topic>ArpGun</Topic>
+          <Binding>∿ decrement chord type</Binding>
+          <Key>Shift + Option + Minus</Key>
+        </KeyBinding>
+        <KeyBinding>
+          <Topic>ArpGun</Topic>
+          <Binding>∿ increment chord inversion</Binding>
+          <Key>Shift + Option + RBracket</Key>
+        </KeyBinding>
+        <KeyBinding>
+          <Topic>ArpGun</Topic>
+          <Binding>∿ decrement chord inversion</Binding>
+          <Key>Shift + Option + LBracket</Key>
+        </KeyBinding>
+        <KeyBinding>
+          <Topic>ArpGun</Topic>
+          <Binding>∿ insert scale chord 1</Binding>
+          <Key>Shift + Option + 1</Key>
+        </KeyBinding>
+        <KeyBinding>
+          <Topic>ArpGun</Topic>
+          <Binding>∿ insert scale chord 2</Binding>
+          <Key>Shift + Option + 2</Key>
+        </KeyBinding>
+        <KeyBinding>
+          <Topic>ArpGun</Topic>
+          <Binding>∿ insert scale chord 3</Binding>
+          <Key>Shift + Option + 3</Key>
+        </KeyBinding>
+        <KeyBinding>
+          <Topic>ArpGun</Topic>
+          <Binding>∿ insert scale chord 4</Binding>
+          <Key>Shift + Option + 4</Key>
+        </KeyBinding>
+        <KeyBinding>
+          <Topic>ArpGun</Topic>
+          <Binding>∿ insert scale chord 5</Binding>
+          <Key>Shift + Option + 5</Key>
+        </KeyBinding>
+        <KeyBinding>
+          <Topic>ArpGun</Topic>
+          <Binding>∿ insert scale chord 6</Binding>
+          <Key>Shift + Option + 6</Key>
+        </KeyBinding>
+        <KeyBinding>
+          <Topic>ArpGun</Topic>
+          <Binding>∿ insert scale chord 7</Binding>
+          <Key>Shift + Option + 7</Key>
+        </KeyBinding>
+      </KeyBindings>
+    </Category>
+  </Categories>
+</KeyboardBindings>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RenoiseScriptingTool doc_version="0">
+  <ApiVersion>6.2</ApiVersion>
+  <AutoUpgraded>false</AutoUpgraded>
+  <Id>com.trueschool.ArpGun</Id>
+  <Version>0.95</Version>
+  <Author>trueschool</Author>
+  <Name>Arp Gun</Name>
+  <Category>Pattern Editor</Category>
+  <Description>Arp Gun adds arpeggiator patterns to the Chord Gun engine, allowing chords to be spaced across multiple lines.</Description>
+</RenoiseScriptingTool>
