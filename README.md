@@ -32,7 +32,7 @@ ArpGun is an evolution of **ChordGun**, originally developed by pandabot. While 
 
 **Requirements:** Renoise 3.4.0 or newer (requires API Version 6.2 for native note playing).
 
-1.  Download the `ArpGun_v0.95.1.xrnx` file.
+1.  Download the `ArpGun_v1.0.xrnx` file.
 2.  Drag and drop the file onto the Renoise window.
 3.  Access the tool via **Tools -> ArpGun** or by assigning a keyboard shortcut.
 
