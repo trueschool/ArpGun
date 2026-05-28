@@ -1,47 +1,64 @@
 previousChordNotesArray = nil
 
 function connectOSC()
-  -- Left empty; OSC networking removed in favor of direct Renoise 6.2 API calls
+    -- Left empty; OSC networking removed in favor of direct Renoise 6.2 API calls
 end
 
 function getVelocityValue()
-  if renoise.song().transport.keyboard_velocity_enabled then
-    return renoise.song().transport.keyboard_velocity
-  else
-    return 127
-  end
+    if renoise.song().transport.keyboard_velocity_enabled then
+        return renoise.song().transport.keyboard_velocity
+    else
+        return 127
+    end
 end
 
 function stopPreviousChord(chordNotesArray)
-  local song = renoise.song()
-  local instrument_index = song.selected_instrument_index
-  local track_index = song.selected_track_index
+    local song = renoise.song()
+    local instrument_index = song.selected_instrument_index
+    local track_index = song.selected_track_index
 
-  for i = 1, #chordNotesArray do
-    local note = chordNotesArray[i]
-    -- Renoise API takes raw note values (0 = C-0, 119 = B-9)
-    song:trigger_instrument_note_off(instrument_index, track_index, note)
-  end
+    for i = 1, #chordNotesArray do
+        local note = chordNotesArray[i]
+        -- Renoise API takes raw note values (0 = C-0, 119 = B-9)
+        song:trigger_instrument_note_off(instrument_index, track_index, note)
+    end
+end
+
+function stopCurrentChordTimer()
+    if previousChordNotesArray ~= nil then
+        stopPreviousChord(previousChordNotesArray)
+        previousChordNotesArray = nil
+    end
+    if renoise.tool():has_timer(stopCurrentChordTimer) then
+        renoise.tool():remove_timer(stopCurrentChordTimer)
+    end
 end
 
 function playChordWithOsc(chordNotesArray)
-  -- Stop the previous chord if it is still playing
-  if previousChordNotesArray ~= nil then
-    stopPreviousChord(previousChordNotesArray)
-  end
+    -- Stop the previous chord if it is still playing
+    if previousChordNotesArray ~= nil then
+        stopPreviousChord(previousChordNotesArray)
+    end
 
-  local song = renoise.song()
-  local instrument_index = song.selected_instrument_index
-  local track_index = song.selected_track_index
+    if renoise.tool():has_timer(stopCurrentChordTimer) then
+        renoise.tool():remove_timer(stopCurrentChordTimer)
+    end
 
-  -- The Renoise API expects volume normalized between 0.0 and 1.0
-  local velocityValue = getVelocityValue()
-  local volume = velocityValue / 127.0
+    local song = renoise.song()
+    local instrument_index = song.selected_instrument_index
+    local track_index = song.selected_track_index
 
-  for i = 1, #chordNotesArray do
-    local note = chordNotesArray[i]
-    song:trigger_instrument_note_on(instrument_index, track_index, note, volume)
-  end
+    -- The Renoise API expects volume normalized between 0.0 and 1.0
+    local velocityValue = getVelocityValue()
+    local volume = velocityValue / 127.0
 
-  previousChordNotesArray = chordNotesArray
+    for i = 1, #chordNotesArray do
+        local note = chordNotesArray[i]
+        song:trigger_instrument_note_on(instrument_index, track_index, note, volume)
+    end
+
+    previousChordNotesArray = chordNotesArray
+
+    -- Add a timer to stop the chord after 1 second (1000 ms)
+    renoise.tool():add_timer(stopCurrentChordTimer, 1000)
 end
